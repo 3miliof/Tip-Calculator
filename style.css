@@ -20,7 +20,7 @@
     position: absolute;
     width: 32%;
     height: 10%;
-    background-image: url(images/logo.svg);
+    background-image: url(logo.svg);
     background-size: cover;
     left: 50%;
     top: 10%;
@@ -83,7 +83,7 @@
     position: absolute;
     height: 30%;
     width: 5%;
-    background-image: url(images/icon-dollar.svg);
+    background-image: url(icon-dollar.svg);
     background-size: cover;
     content: "";
     left: 5%;
@@ -192,7 +192,7 @@
     position: absolute;
     height: 3%;
     width: 5%;
-    background-image: url(images/icon-person.svg);
+    background-image: url(icon-person.svg);
     background-size: cover;
     content: "";
     margin-top: 2.5%;
