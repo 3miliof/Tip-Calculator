@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+
+  <div class="bgWrapper">
+
+    <div class="logo"></div>
+
+    <div class="tipCalcBox">
+
+      <div class="billSection">
+
+        <div class="billText">Bill</div>
+
+        <div class="billTotalBox">
+
+          <textarea id="preTipTotal" onfocus="this.value=''"  onblur="updateBillAmount(parseFloat(this.value))" class="billTotalFigure">0</textarea>
+
+        </div>
+
+      </div>
+
+      <div class="tipSelectionSection">
+
+        <div class="selectTipTitle">Select Tip %</div>
+
+        <div class="tipOptionsFlex">
+
+          <div class="tipOptions">
+            <div class="tipBox" onclick="updateTipAmount(5); addSelectedClass(this)"><p>5%</p></div>
+            <div class="tipBox" onclick="updateTipAmount(10); addSelectedClass(this)"><p>10%</p></div>
+          </div>
+
+          <div class="tipOptions">
+            <div class="tipBox" onclick="updateTipAmount(15); addSelectedClass(this)"><p>15%</p></div>
+            <div class="tipBox" onclick="updateTipAmount(25); addSelectedClass(this)"><p>25%</p></div>
+          </div>
+
+          <div class="tipOptions">
+            <div class="tipBox" onclick="updateTipAmount(50); addSelectedClass(this)"><p>50%</p></div>
+            <div class="tipBoxCustom"><textarea onclick="addSelectedClass(this)" onfocus="this.value=''; this.classList.add('selectedCustom');" onblur="updateTipAmount(parseInt(this.value))" id="tipBoxCustom">Custom</textarea></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="noOfPeopleSection">
+        <p class="peopleTitle">Number of People</p>
+        <div class="noOfPeopleDiv"><textarea id="noOfPeople" onfocus="this.value=''" onblur="updateNoPeople(parseInt(this.value))" class="noOfPeopleText">0</textarea></div>
+      </div>
+
+      <div class="resultSection">
+
+        <div class="resultbgBox">
+
+          <div class="tipAmountBox">
+            <div class="tipText">
+              <p class="tipAmountText">Tip Amount</p>
+              <p class="tipPerPerson">/ person</p>
+            </div>
+            <p id="tipTotal" class="tipTotal">$0.00</p>
+          </div>
+
+          <div class="totalAmountBox">
+            <div class="totalText">
+              <p class="totalAmountText">Total</p>
+              <p class="totalPerPerson">/ person</p>
+            </div>
+            <p id="billTotal" class="billTotal">$0.00</p>
+          </div>
+
+          <div id="resetButton" onclick="resetAll()" class="resetBox">RESET</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let totalBill = 0;
+    let tipAmount = 0;
+    let tipPercent = 0;
+    let NoOfPeople = 0;
+    let totalBillPerPerson = 0.00;
+    let tipAmountPerPerson = 0.00;
+
+    function updateBillAmount(billAmount) {
+      totalBill = billAmount;
+      updateTotal();
+    }
+    
+    function updateTipAmount(tipPercentage) {
+      tipPercent = tipPercentage;
+      tipAmount = (totalBill * (tipPercentage/100)).toFixed(2);
+      updateTotal();
+    }
+
+    function updateNoPeople(NoPeople) {
+      NoOfPeople = NoPeople;
+      updateTotal()
+    }
+
+    function updateTotal() {
+      tipAmountPerPerson = ((totalBill * (tipPercent/100)).toFixed(2) / NoOfPeople).toFixed(2);
+      totalBillPerPerson = (totalBill / NoOfPeople).toFixed(2);
+
+      document.getElementById("tipTotal").innerHTML = tipAmountPerPerson;
+      document.getElementById("billTotal").innerHTML = (parseFloat(totalBillPerPerson) + parseFloat(tipAmountPerPerson)).toFixed(2);
+    }
+
+    function addSelectedClass(theElement) {
+
+      Array.from(document.getElementsByClassName("Selected")).forEach(element => {
+        element.classList.remove("Selected");
+      });
+
+      if(theElement != document.getElementById("tipBoxCustom")) {
+        theElement.classList.add("Selected");
+      }
+    }
+
+    function resetAll() {
+      document.getElementById("preTipTotal").value = "0"
+      document.getElementById("tipBoxCustom").value = "Custom"
+      document.getElementById("noOfPeople").value = "0"
+      addSelectedClass(document.getElementById("tipBoxCustom"));
+      document.getElementById("tipTotal").innerHTML = 0.00;
+      document.getElementById("billTotal").innerHTML = 0.00;
+
+      totalBill = 0;
+      tipAmount = 0;
+      tipPercent = 0;
+      NoOfPeople = 0;
+      totalBillPerPerson = 0.00;
+      tipAmountPerPerson = 0.00;
+    }
+  </script>
+</body>
+</html>

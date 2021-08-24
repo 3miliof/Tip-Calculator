@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Space Mono", monospace;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.bgWrapper {
+    position: absolute;
+    top: 0;
+    height: 110vh;
+    width: 100vw;
+    background-color:  hsl(185, 41%, 84%);
+}
+
+.logo {
+    position: absolute;
+    width: 32%;
+    height: 10%;
+    background-image: url(images/logo.svg);
+    background-size: cover;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.tipCalcBox {
+    height: 110%;
+    width: 100%;
+    background-color: white;
+    border-radius: 40px;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.billSection {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5vh;
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+}
+
+.billText {
+    margin-bottom: 1vh;
+}
+
+.billTotalBox {
+    height: 7vh;
+    width: 100%;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 10px;
+}
+
+.billTotalFigure {
+    position: relative;
+    float: right;
+    border: 0px;
+    background-color: hsl(189, 41%, 97%);
+    text-align: right;
+    font-size: 7.5vw;
+    resize: none;
+    width: 95%;
+    padding-right: 5%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+}
+
+.billTotalFigure:focus {
+    border: 2px hsl(172, 67%, 45%) solid;
+    border-radius: 10px;
+    outline: none;
+}
+
+.billTotalBox::before {
+    position: absolute;
+    height: 30%;
+    width: 5%;
+    background-image: url(images/icon-dollar.svg);
+    background-size: cover;
+    content: "";
+    left: 5%;
+    top: 55%;
+    z-index: 9999;
+}
+
+.tipSelectionSection {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5vh;
+    height: 30vh;
+    margin-bottom: 2.5vh;
+}
+
+.selectTipTitle {
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+}
+
+.tipOptionsFlex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.tipOptions {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    margin-top: 7.5%;
+    justify-content: space-between;
+}
+
+.tipBox {
+    height: 100%;
+    width: 47.5%;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 5vw;
+    text-align: center;
+}
+
+.tipBoxCustom {
+    height: 100%;
+    width: 47.5%;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 5px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.tipBox > p {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#tipBoxCustom{
+    position: relative;
+    border: 0px;
+    width: 100%;
+    background-color: hsl(189, 41%, 97%);
+    font-size: 5vw;
+    border-radius: 5px;
+    resize: none;
+    height: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: hsl(186, 14%, 43%);
+    top: 50%;
+    line-height: 10vw;
+    transform: translateY(-50%);
+}
+
+.tipBoxCustom > #tipBoxCustom:focus {
+    border: hsl(172, 67%, 45%) 2px solid;
+    outline: none;
+    border-radius: 5px;
+}
+
+.noOfPeopleSection {
+    height: 20vh;
+    width: 80%;
+    margin-top: 5vh;
+    margin-left: 10%;
+}
+
+.peopleTitle {
+    color: hsl(186, 14%, 43%);
+    font-weight: 700;
+}
+
+.noOfPeopleDiv {
+    margin-top: 2.5vh;
+    width: 100%;
+    height: 7vh;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 5px;
+}
+
+.noOfPeopleDiv::before {
+    position: absolute;
+    height: 3%;
+    width: 5%;
+    background-image: url(images/icon-person.svg);
+    background-size: cover;
+    content: "";
+    margin-top: 2.5%;
+    margin-left: 5%;
+}
+
+.noOfPeopleText {
+    resize: none;
+    width: 80%;
+    height: 100%;
+    border: 0px;
+    margin-right: 5%;
+    float: right;
+    background-color: hsl(189, 41%, 97%);
+    font-weight: 700;
+    font-size: 7.5vw;
+    text-align: right;
+    color: hsl(183, 100%, 15%);
+}
+
+.resultSection {
+    height: 35%;
+    width: 100%;
+    font-weight: 700;
+}
+
+.resultbgBox {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 17.5px;
+}
+
+.tipAmountBox {
+    height: 20%;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    letter-spacing: .3vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tipAmountText {
+    height: fit-content;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 4vw;
+}
+
+.tipPerPerson {
+    color: hsla(185, 41%, 84%, 0.5);
+    margin-top: 3%;
+    font-size: 3vw;
+}
+
+.tipTotal {
+    font-size: 10vw;
+    text-align: center;
+    color: hsl(172, 67%, 45%);
+}
+
+.totalAmountBox {
+    height: 20%;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    letter-spacing: .3vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalAmountText {
+    height: fit-content;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 4vw;
+}
+
+.totalPerPerson {
+    color: hsla(185, 41%, 84%, 0.5);
+    margin-top: 3%;
+    font-size: 3vw;
+}
+
+.billTotal {
+    font-size: 10vw;
+    text-align: center;
+    color: hsl(172, 67%, 45%);
+}
+
+.resetBox {
+    height: 15%;
+    margin-top: 10%;
+    width: 80%;
+    margin-left: 10%;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    text-align: center;
+    border-radius: 5px;
+    vertical-align: middle;
+    align-content: center;
+}
+
+.Selected {
+    background:hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
