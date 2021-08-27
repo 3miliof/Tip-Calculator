@@ -220,7 +220,7 @@
 }
 
 .resultbgBox {
-    height: 80%;
+    height: auto;
     width: 80%;
     margin-left: 10%;
     display: flex;
@@ -298,6 +298,7 @@
     color: hsl(183, 100%, 15%);
     text-align: center;
     border-radius: 5px;
+    margin-bottom: 10px
     vertical-align: middle;
     align-content: center;
 }
