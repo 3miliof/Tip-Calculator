@@ -18,10 +18,12 @@
 
 .logo {
     position: absolute;
-    width: 32%;
-    height: 10%;
+    width: 44vw;
+    height: 27.5vw;
     background-image: url(logo.svg);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     left: 50%;
     top: 10%;
     transform: translate(-50%, -50%);
@@ -298,7 +300,7 @@
     color: hsl(183, 100%, 15%);
     text-align: center;
     border-radius: 5px;
-    margin-bottom: 10px
+    margin-bottom: 10px;
     vertical-align: middle;
     align-content: center;
 }
@@ -306,4 +308,149 @@
 .Selected {
     background:hsl(172, 67%, 45%);
     color: hsl(183, 100%, 15%);
+}
+
+@media only screen and (min-width: 1024px) {
+    .bgWrapper {
+        height: 100vh;
+    }
+
+    .logo {
+        width: 10vw;
+        height: 6vw;
+    }
+
+    .tipCalcBox {
+        width: 80vw;
+        height: 60vh;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        margin-top: 5vh;
+    }
+
+    .billSection {
+        width: 40%;
+        margin-left: 5%;
+    }
+
+    .billTotalBox::before {
+        height: 37.5%;
+        top: 50%;
+    }
+
+    .billTotalFigure {
+        font-size: 2.5vw;
+    }
+
+    .tipSelectionSection{
+        width: 40%;
+        margin-left: 5%;
+        margin-top: 2.5vh;
+        margin-bottom: 0%;
+    }
+
+    .tipOptionsFlex {
+        flex-direction: row;
+    }
+
+    .tipOptions {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1vh;
+        width: 33.3%;
+    }
+
+    .tipBox {
+        width: 90%;
+        margin-top: 2vh;
+        align-items: center;
+        font-size: 2.5vw;
+    }
+
+    .tipBoxCustom {
+        width: 90%;
+        margin-top: 2vh;
+        align-items: center;
+        font-size: 2.5vw;
+    }
+
+    #tipBoxCustom {
+        font-size: 2vw;
+        line-height: 2.5vw;
+    }
+
+    .noOfPeopleSection {
+        position: relative;
+        width: 40%;
+        margin-left: 5%;
+        margin-top: 0vh;
+        transform: translateY(-35%);
+    }
+
+    .noOfPeopleDiv::before {
+        height: 30%;
+        width: 7.5%;
+        margin-top: 1.5%;
+        margin-left: 2.5%;
+    }
+
+    .noOfPeopleText {
+        font-size: 2.5vw;
+    }
+
+    .resultSection {
+        margin-top: 2.5%;
+        position: absolute;
+        width: 45%;
+        height: 90%;
+        top: 0;
+        left: 50%;
+        margin-left: 2.5%;
+    }
+
+    .resultbgBox {
+        margin-left: 2.5%;
+        width: 97.5%;
+        height: 97.5%;
+    }
+
+
+    .tipAmountBox {
+        letter-spacing: .1vw;
+    }
+
+    .tipAmountText {
+        font-size: 1.5vw;
+    }
+
+    .tipPerPerson {
+        font-size: 1vw;
+    }
+
+    .tipTotal {
+        font-size: 4vw;
+    }
+
+    .totalAmountBox {
+        letter-spacing: .1vw;
+    }
+
+    .totalAmountText {
+        font-size: 1.5vw;
+    }
+
+    .totalPerPerson {
+        font-size: 1vw;
+    }
+
+    .billTotal {
+        font-size: 4vw;
+    }
+
+    .resetBox {
+        font-size: 2.5vw;
+    }
+
 }
